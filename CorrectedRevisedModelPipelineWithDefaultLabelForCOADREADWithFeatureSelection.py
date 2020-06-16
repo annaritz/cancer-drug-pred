@@ -52,8 +52,8 @@ def ds_pipeline():
 
     # Function to create features
     def create_features():
-        input_df = pd.read_csv(r"C:\Users\dmandera\Documents\Darsh\Cancer\KIPAN\AfterDistrict\COADREAD-84\WorkFiles\CSV Files for Program Input\COADREAD-genedata-only-CSV.csv")
-
+        #input_df = pd.read_csv(r"C:\Users\dmandera\Documents\Darsh\Cancer\KIPAN\AfterDistrict\COADREAD-84\WorkFiles\CSV Files for Program Input\COADREAD-genedata-only-CSV.csv")
+        input_df = pd.read_csv("COADREAD-genedata-only-CSV.csv")
         input_df_without_symbol_names = input_df.drop(['Patient'], axis=1)
 
         transposed_frame = input_df_without_symbol_names.T
@@ -95,7 +95,8 @@ def ds_pipeline():
     def create_labels():
         global drug_names
 
-        pmedsdf = pd.read_csv(r"C:\Users\dmandera\Documents\Darsh\Cancer\KIPAN\AfterDistrict\COADREAD-84\WorkFiles\CSV Files for Program Input\COADREAD-drugdata-only-CSV.csv")
+        #pmedsdf = pd.read_csv(r"C:\Users\dmandera\Documents\Darsh\Cancer\KIPAN\AfterDistrict\COADREAD-84\WorkFiles\CSV Files for Program Input\COADREAD-drugdata-only-CSV.csv")
+        pmedsdf = pd.read_csv("COADREAD-drugdata-only-CSV.csv")
         drug_names = pmedsdf.T.iloc[0].tolist()
         pmedsdf = pmedsdf.T.iloc[1:]
         pmedsdf.columns = drug_names
@@ -278,7 +279,8 @@ def ds_pipeline():
 
     # In[16]:
 
-    input_df = pd.read_csv(r"C:\Users\dmandera\Documents\Darsh\Cancer\KIPAN\AfterDistrict\COADREAD-84\WorkFiles\CSV Files for Program Input\COADREAD-genedata-only-CSV.csv")
+    #input_df = pd.read_csv(r"C:\Users\dmandera\Documents\Darsh\Cancer\KIPAN\AfterDistrict\COADREAD-84\WorkFiles\CSV Files for Program Input\COADREAD-genedata-only-CSV.csv")
+    input_df = pd.read_csv("COADREAD-genedata-only-CSV.csv")
     feature_names = input_df["Patient"]
 
     dot_data = StringIO()
