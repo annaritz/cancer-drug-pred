@@ -238,7 +238,7 @@ def ds_pipeline():
 
     # In[12]:
 
-    clf.grid_scores_
+    clf.cv_results_
 
 
     # # Accuracy Score for the whole model
